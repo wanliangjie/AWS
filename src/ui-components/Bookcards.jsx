@@ -13,15 +13,10 @@ import {
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function Bookcards(props) {
   const { book, comments, overrides, ...rest } = props;
-  const buttonThreeSevenFiveZeroTwoFiveFourTwoOnClick = useNavigateAction({
+  const buttonOnClick = useNavigateAction({
     target: "_blank",
     type: "url",
     url: book?.resource,
-  });
-  const buttonThreeSixSevenEightTwoFiveSevenTwoOnClick = useNavigateAction({
-    target: "_blank",
-    type: "url",
-    url: "/new",
   });
   return (
     <Flex
@@ -135,7 +130,7 @@ export default function Bookcards(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children={book?.id}
+              children={book?.pub_message}
               {...getOverrideProps(overrides, "bookID")}
             ></Text>
             <Flex
@@ -205,23 +200,9 @@ export default function Bookcards(props) {
                 variation="primary"
                 children="查看"
                 onClick={() => {
-                  buttonThreeSevenFiveZeroTwoFiveFourTwoOnClick();
+                  buttonOnClick();
                 }}
-                {...getOverrideProps(overrides, "Button37502542")}
-              ></Button>
-              <Button
-                width="111px"
-                height="24px"
-                shrink="0"
-                backgroundColor="rgba(184,206,249,1)"
-                size="default"
-                isDisabled={false}
-                variation="primary"
-                children="评论"
-                onClick={() => {
-                  buttonThreeSixSevenEightTwoFiveSevenTwoOnClick();
-                }}
-                {...getOverrideProps(overrides, "Button36782572")}
+                {...getOverrideProps(overrides, "Button")}
               ></Button>
             </Flex>
           </Flex>

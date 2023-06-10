@@ -109,7 +109,7 @@ export default function ContactUs(props) {
         label="书号"
         shrink="0"
         alignSelf="stretch"
-        placeholder="Placeholder"
+        placeholder={book?.id}
         size="large"
         isDisabled={false}
         labelHidden={false}

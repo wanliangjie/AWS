@@ -10,6 +10,7 @@ import {
   getOverrideProps,
   getOverridesFromVariants,
   mergeVariantsAndOverrides,
+  useNavigateAction,
 } from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function HeroLayout1(props) {
@@ -38,6 +39,11 @@ export default function HeroLayout1(props) {
     getOverridesFromVariants(variants, props),
     overridesProp || {}
   );
+  const buttonOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "/new",
+  });
   return (
     <Flex
       gap="0"
@@ -113,6 +119,9 @@ export default function HeroLayout1(props) {
           isDisabled={false}
           variation="primary"
           children="评论"
+          onClick={() => {
+            buttonOnClick();
+          }}
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>
